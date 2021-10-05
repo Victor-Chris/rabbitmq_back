@@ -4,7 +4,8 @@ import os
 
 
 def main():
-    connection = pika.BlockConnection(pika.ConnectionParameters('localhost'))
+    connection = pika.BlockingConnection(
+        pika.ConnectionParameters('localhost'))
     channel = connection.channel()
 
     # Ensure Queue exists
